@@ -1,0 +1,11 @@
+Design:
+In this project, I used Object-oriented approach to finish this interpreter. I create several classes according to the BNF talked in class expect <no>, <let>, <digit>, <comp op>. In most classes, they have three methods: parse, print and execute. By connecting to each other, they could parse, print and execute the whole core program. For convenience, I turned tokenizer class into a singleton class to ensure there is only one tokenizer instance in process. Also, to handle the input data file, I create a singleton class named Inputfile in order to pass the scanner to idList. In order to print nicely, I create another singleton class named Tab to help determine how many tabs I need when print a specific statement.
+
+Instruction:
+Interpreter could help users to run the core program given the input data file this program needs. It first tokenizes the core program into tokens, and determine which class those tokens belong to. Then, parse methods will help parse tokens into several objects as defined in the BNF. Each class will help parse the overall project. Same as printing and executing. After parsing, the interpreter could help execute the program. So, user could give the interpreter the core program and the input data file, determine whether print or not print. And the interpreter will execute the program to get the result for the program.
+
+Test process:
+First, in order to be more convenient, I create a test.java file that stored the path to the test.txt file and textInput.txt file. Add toggle breakpoint to each parse method of each class to debug. 
+
+Bugs I found when debugging:
+Sometimes I forgot to skipToken and sometimes I skip two tokens but in different class. Also, the singleton class needs carefully initialization.
